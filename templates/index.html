@@ -1,16 +1,16 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}" />
     <title> Yin's Tic-Tac-Toe Game</title>
 </head>
 <body>
-  <nav>
+  <!-- <nav>
     <a href="landing.html">Demo Video</a>
     <a href="#">Home</a>
     <a href="play.html">Play</a>
     <a href="stats.html">Statistics</a>
-  </nav>
+  </nav> -->
   
   <div class="welcome">
     <h1>Welcome to Yin's Tic-Tac-Toe Game</h1>
@@ -30,37 +30,40 @@
 
   <div class="mode">
     <h2>Choose Game Mode</h2>
-    <form action="play.html" method="get">
+    <form action="/play" method="post">
       <label>
-        <input type="radio" name="mode" value="0-player">
-        Watch 2 bots play
+        <input type="radio" name="player0_mode" value="human">
+        player0: Human
       </label>
-      <br>
       <label>
-        <input type="radio" name="mode" value="1-player">
-        Play against a bot
+        <input type="radio" name="player0_mode" value="bot">
+        player0: Bot
       </label>
-      <br>
+     
       <div class="player-names">
         <label>
           Player 1 Name:
+          <br>
           <input type="text" name="player1">
         </label>
       </div>
       <label>
-        <input type="radio" name="mode" value="2-player">
-        Play with a friend
+        <input type="radio" name="player1_mode" value="human">
+        player 0: Human
       </label>
-      <br>
+            <label>
+        <input type="radio" name="player1_mode" value="bot">
+        Player 0: Bot
+      </label>
 
       <div class="player-names">
-        <label>
-          Player 1 Name:
-          <input type="text" name="player1">
-        </label>
-        <br>
+<!--        <label>-->
+<!--          Player 1 Name:-->
+<!--          <input type="text" name="player1">-->
+<!--        </label>-->
         <label>
           Player 2 Name:
+          <br>
           <input type="text" name="player2">
         </label>
       </div>

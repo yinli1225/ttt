@@ -2,7 +2,7 @@
 # the Tic-Tac-Toe game. This is where input and output happens.
 # For core game logic, see logic.py.
 
-from logic_wk8 import Board, Bot, Game, Human
+from logic_wk10 import Board, Bot, Game, Human
 
 if __name__ == "__main__":
     game_start = True
@@ -30,6 +30,7 @@ if __name__ == "__main__":
 
         print(player1.name, "vs", player2.name)
         game = Game(player1, player2)
+
         winner = game.run()
         print("The winner is:", winner)
 

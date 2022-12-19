@@ -29,3 +29,15 @@
 0,28,Mary,Human,David,Human,Draw,N/A,N/A,8
 0,29,Bot,Bot,David,Human,Draw,N/A,N/A,7
 
+0,29,aaa,Human,aa,Human,,N/A,N/A,1
+0,30,a,Human,a,Human,,N/A,N/A,1
+0,31,aa,Human,aaa,Human,,N/A,N/A,1
+0,32,aa,Human,aaa,Human,,N/A,N/A,2
+0,33,aa,Human,a,Human,,N/A,N/A,1
+0,34,aa,Human,a,Human,,N/A,N/A,2
+0,35,aa,Human,a,Human,,N/A,N/A,3
+0,36,aa,Human,a,Human,,N/A,N/A,4
+0,37,aa,Human,a,Human,X,aa,Human,5
+0,38,aaa,Human,aa,Human,X,aaa,Human,5
+0,39,1,Human,2,Human,Draw,N/A,N/A,10
+0,40,1,Human,2,Human,Draw,N/A,N/A,6

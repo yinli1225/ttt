@@ -5,33 +5,23 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 #%%
-folder="./static/"
+folder="/Users/xiaochiu/Desktop/ttt flask/static"
 
 def update_pic():
 
     stats = pd.read_csv("./game_stats.csv")
     winner = stats["Winner"]
     stats[["Winner","Winner Type"]]
-    #%%
+   
     stats["Winner"] != "Draw"
-    #%%
+    
     stats[stats["Winner"]!= "Draw"]
-
-    #%%
-
-    stats[stats["Winner Name"] == "Mary"]
-
-    #%%
 
     # totoal num of games
     stats["Game ID"].count()
 
-    #%%
-
     # winning count
     stats["Winner Name"].value_counts()
-
-    #%%
 
     rankings = pd. DataFrame(columns=[
         "Player Name",
@@ -42,15 +32,9 @@ def update_pic():
     ])
     rankings
 
-    #%%
-
     stats
 
-    #%%
-
     stats[["Winner Name","Winner Type"]].groupby("Winner Type").count()
-
-    #%%
 
     # games count by player， winning rate
     all_names = pd.concat([stats["Player 1"], stats["Player 2"]], ignore_index=True).unique().tolist()
@@ -61,8 +45,6 @@ def update_pic():
     rankings["Draws"] = [((draw_games["Player 1"] == name) | (draw_games["Player 2"] == name)).sum() for name in all_names]
     rankings["Winning Rate"] = rankings["Wins"] / rankings["Games"]
     rankings
-
-    #%%
 
     # Pie chart:
     labels = 'Bot', 'Human'
@@ -80,29 +62,30 @@ def update_pic():
     plt.savefig(folder+"img1.png")
     plt.show()
 
-    #%%
-
+    # Bar chart:
     plt.rcdefaults()
     fig, ax = plt.subplots()
     player=rankings["Player Name"].to_list()
-    #player = ('Bot', 'Bot 2', 'Mary', 'David')
-    wins=rankings["Wins"].to_list()
-    #wins = (8,4,3,2)
+    wins=rankings[rankings["Player Name"]]["Wins"].to_list()[0]
+    #wins=rankings["Wins"].to_list()
 
     ax.barh(y_pos, wins, align='center')
     ax.set_yticks(y_pos, labels=player)
     ax.invert_yaxis()  # labels read top-to-bottom
     ax.set_xlabel('Wins')
     ax.set_title('Winner Ranking')
-
+    plt.savefig(folder+"img2.png")
     plt.show()
 
-    #%%
-
+    # Scatter:
     stats.plot.scatter(x = "Game ID", y = "Moves")
+    plt.savefig(folder+"img3.png")
+    plt.show()
 
 
 if __name__ == "__main__":
     update_pic()
+
+
 
 
